@@ -2,6 +2,7 @@ import 'package:atb_hackathon/src/models/bank_card_model.dart';
 import 'package:atb_hackathon/views/credit_card/credit_card_detail.dart';
 import 'package:atb_hackathon/src/widgets/common/navigation/route_transition.dart';
 import 'package:atb_hackathon/src/widgets/for_animations/bank_card_animation.dart';
+import 'package:atb_hackathon/views/credit_card/credit_card_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
 import 'package:after_layout/after_layout.dart';
