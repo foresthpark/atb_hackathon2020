@@ -12,6 +12,18 @@ class ConfirmPaymentScreen extends StatelessWidget {
             title: const Text('Confirm payment')),
         body: Container(
             child: Column(children: [
+          Text(
+            "Send",
+            style: Theme.of(context).textTheme.display2,
+          ),
+          Text(
+            "\$32.73 CAD",
+            style: Theme.of(context).textTheme.display3,
+          ),
+          Text(
+            "John Doe",
+            style: Theme.of(context).textTheme.display1,
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
