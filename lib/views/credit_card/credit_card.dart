@@ -1,7 +1,18 @@
 import 'package:atb_hackathon/src/widgets/bank_card/bank_card_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:qrscan/qrscan.dart' as scanner;
+
+
 
 class CreditCardScreen extends StatelessWidget {
+
+  void _scan() async {
+    String cameraScanResult = await scanner.scan();
+    // TODO: go to payment page
+    print(cameraScanResult);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +43,7 @@ class CreditCardScreen extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.camera_alt),
                 color: Colors.white,
-                onPressed: () {},
+                onPressed: _scan,
               ),
             ),
           ]);
