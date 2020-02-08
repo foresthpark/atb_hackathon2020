@@ -1,4 +1,5 @@
 import 'package:atb_hackathon/views/pending_catgories.dart';
+import 'package:atb_hackathon/views/insights.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
@@ -28,7 +29,7 @@ class _TabPageState extends State<TabPage> {
   List<Widget> views = [
     PendingCatgories(),
     CreditCardScreen(),
-    PendingCatgories(),
+    InsightsScreen(),
   ];
 
   @override
