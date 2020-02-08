@@ -1,9 +1,6 @@
-import 'dart:async';
-
 import 'package:atb_hackathon/models/Transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'dart:io';
 import 'package:uuid/uuid.dart';
 
 class PendingCatgories extends StatefulWidget {
@@ -20,84 +17,63 @@ class _PendingCatgoriesState extends State<PendingCatgories> {
     var uuid = new Uuid();
 
     List getList() {
-      List<Transaction> listers = [
+      List<Transaction> txns = [
         Transaction(
             name: "Amazon",
             date: "11/12/2020",
-            amount: 53.43,
+            amount: 27.47,
             index: uuid.v1()),
         Transaction(
-            name: "Amazon",
+            name: "eBay", date: "11/12/2020", amount: 53.43, index: uuid.v1()),
+        Transaction(
+            name: "Cineplex",
             date: "11/12/2020",
-            amount: 53.43,
+            amount: 13.22,
             index: uuid.v1()),
         Transaction(
-            name: "Amazon",
+            name: "Burger King",
             date: "11/12/2020",
-            amount: 53.43,
+            amount: 6.33,
             index: uuid.v1()),
         Transaction(
-            name: "Amazon",
+            name: "Walmart",
             date: "11/12/2020",
-            amount: 53.43,
+            amount: 31.23,
             index: uuid.v1()),
         Transaction(
-            name: "Amazon",
+            name: "Canadian Tire",
             date: "11/12/2020",
-            amount: 53.43,
+            amount: 59.93,
             index: uuid.v1()),
         Transaction(
-            name: "Amazon",
+            name: "Winners",
             date: "11/12/2020",
-            amount: 53.43,
+            amount: 23.44,
             index: uuid.v1()),
         Transaction(
-            name: "Amazon",
+            name: "Staples",
             date: "11/12/2020",
-            amount: 53.43,
-            index: uuid.v1()),
-        Transaction(
-            name: "Amazon",
-            date: "11/12/2020",
-            amount: 53.43,
+            amount: 12.13,
             index: uuid.v1()),
       ];
 
-      return listers;
+      return txns;
     }
 
-    List<Transaction> listers2 = [
-      Transaction(
-          name: "Amazon", date: "11/12/2020", amount: 11.43, index: uuid.v1()),
-      Transaction(
-          name: "Amazon", date: "11/12/2020", amount: 11.43, index: uuid.v1()),
-      Transaction(
-          name: "Amazon", date: "11/12/2020", amount: 11.43, index: uuid.v1()),
-      Transaction(
-          name: "Amazon", date: "11/12/2020", amount: 11.43, index: uuid.v1()),
-      Transaction(
-          name: "Amazon", date: "11/12/2020", amount: 11.43, index: uuid.v1()),
-    ];
-
-    List listers = getList();
-
-    void delete(String uuid) {
-      listers.removeWhere((eng) => eng.index == uuid);
-    }
+    List<Transaction> txns = getList();
+    final names = txns.map((txn) => txn.name).toList();
+    final amounts = txns.map((txn) => txn.amount).toList();
 
     return Scaffold(
       body: ListView.builder(
-        itemCount: listers.length,
+        itemCount: txns.length,
         itemBuilder: (context, index) {
           return Slidable(
             dismissal: SlidableDismissal(
               child: SlidableDrawerDismissal(),
               onDismissed: (actionType) {
+                print("SLIDE ACTION:");
                 print(actionType);
-//                setState(() {
-//                  listers.removeAt(index);
-//                  listers = [];
-//                });
               },
             ),
             key: UniqueKey(),
@@ -112,31 +88,24 @@ class _PendingCatgoriesState extends State<PendingCatgories> {
                     child: Text(index.toString()),
                     foregroundColor: Colors.white,
                   ),
-                  title: Text('Tile n°$index'),
-                  subtitle: Text('SlidableDrawerDelegate'),
+                  title: Text(names[index].toString()),
+                  subtitle: Text('\$${amounts[index].toString()} CAD'),
                 ),
               ),
             ),
             actions: <Widget>[
               IconSlideAction(
-                caption: 'Archive',
-                color: Colors.blue,
-                icon: Icons.archive,
-                onTap: () => print("Arvhice Pressed"),
-              ),
+                  caption: 'Personal',
+                  color: Colors.blue,
+                  icon: Icons.account_circle,
+                  onTap: () => print("Personal tapped")),
             ],
             secondaryActions: <Widget>[
               IconSlideAction(
-                caption: 'Delete',
-                color: Colors.red,
-                icon: Icons.delete,
-                onTap: () {
-                  print("Delete Pressed11");
-
-                  print(listers.length);
-                  setState(() {});
-                },
-              ),
+                  caption: 'Business',
+                  color: Colors.green,
+                  icon: Icons.work,
+                  onTap: () => print("Business tapped")),
             ],
           );
         },

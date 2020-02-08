@@ -26,7 +26,7 @@ class _TabPageState extends State<TabPage> {
   void initState() {
     super.initState();
 
-    var padding = EdgeInsets.symmetric(horizontal: 12, vertical: 5);
+    var padding = EdgeInsets.symmetric(horizontal: 20, vertical: 5);
     double gap = 30;
 
     tabs.add(GButton(
@@ -37,9 +37,9 @@ class _TabPageState extends State<TabPage> {
       color: Colors.purple.withOpacity(.2),
       iconSize: 24,
       padding: padding,
-      icon: LineIcons.home,
+      icon: LineIcons.list,
       // textStyle: t.textStyle,
-      text: 'Home',
+      text: 'Expenses',
     ));
 
     tabs.add(GButton(
@@ -50,9 +50,9 @@ class _TabPageState extends State<TabPage> {
       color: Colors.pink.withOpacity(.2),
       iconSize: 24,
       padding: padding,
-      icon: LineIcons.heart_o,
+      icon: LineIcons.credit_card,
       // textStyle: t.textStyle,
-      text: 'Likes',
+      text: 'Pay',
     ));
 
     tabs.add(GButton(
@@ -63,22 +63,9 @@ class _TabPageState extends State<TabPage> {
       color: Colors.amber[600].withOpacity(.2),
       iconSize: 24,
       padding: padding,
-      icon: LineIcons.search,
+      icon: LineIcons.bar_chart,
       // textStyle: t.textStyle,
-      text: 'Search',
-    ));
-
-    tabs.add(GButton(
-      gap: gap,
-      iconActiveColor: Colors.teal,
-      iconColor: Colors.black,
-      textColor: Colors.teal,
-      color: Colors.teal.withOpacity(.2),
-      iconSize: 24,
-      padding: padding,
-      icon: LineIcons.user,
-      // textStyle: t.textStyle,
-      text: 'Profile',
+      text: 'Insights',
     ));
   }
 

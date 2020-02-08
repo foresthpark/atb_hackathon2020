@@ -1,4 +1,5 @@
 import 'package:atb_hackathon/views/intro_screen.dart';
+import 'package:atb_hackathon/views/tab_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: IntroScreen(),
+      home: TabPage(),
     );
   }
 }
