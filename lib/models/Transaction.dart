@@ -1,8 +1,8 @@
 class Transaction {
-  double amount;
-  String date;
-  String name;
-  String index;
+  final double amount;
+  final String date;
+  final String name;
+  final String index;
 
   Transaction({this.amount, this.date, this.name, this.index});
 
