@@ -28,6 +28,7 @@ dependencies:
   syncfusion_flutter_core: ^17.4.46
   syncfusion_flutter_charts: ^17.4.46
   flutter_slidable: ^0.5.4
+  uuid: ^2.0.4
 
 dev_dependencies:
   flutter_test:
