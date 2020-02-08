@@ -1,4 +1,7 @@
 import 'package:atb_hackathon/views/pending_catgories.dart';
+import 'package:atb_hackathon/views/homepage.dart';
+import 'package:atb_hackathon/views/tab_page.dart';
+import 'package:atb_hackathon/views/credit_card/credit_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
