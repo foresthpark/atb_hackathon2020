@@ -20,6 +20,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  transformer_page_view: ^0.1.4
+  after_layout: ^1.0.7
+
   flutter_swiper: ^1.1.6
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,6 +54,20 @@ flutter:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
+
+
+  assets:
+  - lib/src/assets/imgs/visalogo.png
+  - lib/src/assets/imgs/mastercardlogo.png
+  - lib/src/assets/imgs/elologo.png
+  - lib/src/assets/imgs/chip.png
+  - lib/src/assets/imgs/card1.png
+  - lib/src/assets/imgs/card2.png
+  - lib/src/assets/imgs/card3.png
+  - lib/src/assets/imgs/card1_down.png
+  - lib/src/assets/imgs/card2_down.png
+  - lib/src/assets/imgs/card3_down.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
