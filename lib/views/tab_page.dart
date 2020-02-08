@@ -1,6 +1,9 @@
+import 'package:atb_hackathon/views/pending_catgories.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+
+import 'credit_card/credit_card.dart';
 
 void main() => runApp(TabPage());
 
@@ -20,6 +23,12 @@ class _TabPageState extends State<TabPage> {
     Colors.pink,
     Colors.amber[600],
     Colors.teal
+  ];
+
+  List<Widget> views = [
+    PendingCatgories(),
+    CreditCardScreen(),
+    PendingCatgories(),
   ];
 
   @override
@@ -74,14 +83,6 @@ class _TabPageState extends State<TabPage> {
     return MaterialApp(
       home: Scaffold(
         extendBody: true,
-//        appBar: AppBar(
-//          brightness: Brightness.dark,
-//          title: Text(
-//            'GoogleNavBar',
-//            style: TextStyle(color: Colors.black),
-//          ),
-//          backgroundColor: Colors.white,
-//        ),
         body: PageView.builder(
           onPageChanged: (page) {
             setState(() {
@@ -92,6 +93,7 @@ class _TabPageState extends State<TabPage> {
           itemBuilder: (context, position) {
             return Container(
               color: colors[position],
+              child: views[position],
             );
           },
           itemCount: tabs.length, // Can be null
