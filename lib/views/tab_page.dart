@@ -26,7 +26,7 @@ class _TabPageState extends State<TabPage> {
   void initState() {
     super.initState();
 
-    var padding = EdgeInsets.symmetric(horizontal: 20, vertical: 5);
+    var padding = EdgeInsets.symmetric(horizontal: 16, vertical: 5);
     double gap = 30;
 
     tabs.add(GButton(
@@ -117,7 +117,6 @@ class _TabPageState extends State<TabPage> {
                   tabs: tabs,
                   selectedIndex: selectedIndex,
                   onTabChange: (index) {
-                    print(index);
                     setState(() {
                       selectedIndex = index;
                     });
