@@ -14,15 +14,15 @@ class ConfirmPaymentScreen extends StatelessWidget {
             child: Column(children: [
           Text(
             "Send",
-            style: Theme.of(context).textTheme.display2,
+            style: Theme.of(context).textTheme.headline3,
           ),
           Text(
             "\$32.73 CAD",
-            style: Theme.of(context).textTheme.display3,
+            style: Theme.of(context).textTheme.headline2,
           ),
           Text(
             "John Doe",
-            style: Theme.of(context).textTheme.display1,
+            style: Theme.of(context).textTheme.headline4,
           ),
           Align(
             alignment: Alignment.bottomCenter,
