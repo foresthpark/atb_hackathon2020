@@ -6,7 +6,8 @@ class CreditCardDetailScreen extends StatelessWidget {
   final BankCard card;
   final Image eagerAsset;
 
-  const CreditCardDetailScreen({Key key, this.card, this.eagerAsset}) : super(key: key);
+  const CreditCardDetailScreen({Key key, this.card, this.eagerAsset})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,9 @@ class CreditCardDetailScreen extends StatelessWidget {
           Padding(
               padding: EdgeInsets.all(5),
               child: Container(
-                  height: 400, child: BankCardWidget(card: this.card, asset: this.eagerAsset)))
+                  height: 400,
+                  child:
+                      BankCardWidget(card: this.card, asset: this.eagerAsset)))
         ]));
   }
 }

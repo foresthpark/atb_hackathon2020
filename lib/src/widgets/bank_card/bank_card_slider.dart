@@ -94,9 +94,10 @@ class _BankCardSliderState extends State<BankCardSliderWidget>
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 0, 0, 0.5),
                     borderRadius: BorderRadius.circular(10.0),
-                    image: DecorationImage(
-                        image: AssetImage(card.cardImage + '.png'),
-                        fit: BoxFit.cover)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [Color(0xFF71C5E8), Color(0xFF009CDE)])),
               ));
         }));
   }
