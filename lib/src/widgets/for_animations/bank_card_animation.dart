@@ -5,7 +5,9 @@ class BankCardAnimationWidget extends StatelessWidget {
   final double height;
   final double width;
 
-  const BankCardAnimationWidget({Key key, this.cardImage, this.height, this.width}) : super(key: key);
+  const BankCardAnimationWidget(
+      {Key key, this.cardImage, this.height, this.width})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,10 @@ class BankCardAnimationWidget extends StatelessWidget {
           decoration: BoxDecoration(
               color: Color.fromRGBO(0, 0, 0, 0.5),
               borderRadius: BorderRadius.circular(10.0),
-              image: DecorationImage(
-                  image: AssetImage(this.cardImage + '.png'), fit: BoxFit.cover)),
+              gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [Color(0xFF71C5E8), Color(0xFF009CDE)])),
         ));
   }
 }
