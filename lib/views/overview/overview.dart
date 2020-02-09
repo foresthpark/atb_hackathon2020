@@ -675,6 +675,26 @@ var personal = Card(
               )
             ],
           ),
+          Container(
+            height: 210.0,
+            margin: EdgeInsets.all(5.0),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    'lib/src/assets/imgs/graph.png'),
+              ),
+            ),
+          ),
+          Container(
+            height: 200.0,
+            margin: EdgeInsets.all(5.0),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    'lib/src/assets/imgs/graph2.png'),
+              ),
+            ),
+          ),
         ],
       ),
     ));
