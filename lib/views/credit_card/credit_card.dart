@@ -64,7 +64,7 @@ class _CreditCardScreenState extends State<CreditCardScreen> {
                     activeColor: Colors.green,
                     secondary: categoryValue
                         ? Icon(Icons.work, color: Colors.black)
-                        : Icon(Icons.camera, color: Colors.black),
+                        : Icon(Icons.account_circle, color: Colors.black),
                     title: categoryValue
                         ? Text(
                             'Business',
