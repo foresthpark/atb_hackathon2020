@@ -129,6 +129,7 @@ class IntroScreen extends StatelessWidget {
         onDone: () {
           // When done button is press
           print('This is onDone');
+          Navigator.pop(context);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => TabPage()),

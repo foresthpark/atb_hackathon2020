@@ -38,7 +38,6 @@ class ViewMerchantItems extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              print(merchantItems[index]);
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) {
                   return ProductDetailPage();
