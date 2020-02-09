@@ -37,7 +37,7 @@ class _TabPageState extends State<TabPage> {
   void initState() {
     super.initState();
 
-    var padding = EdgeInsets.symmetric(horizontal: 12, vertical: 5);
+    var padding = EdgeInsets.symmetric(horizontal: 6, vertical: 5);
     double gap = 30;
 
     tabs.add(GButton(
@@ -73,7 +73,7 @@ class _TabPageState extends State<TabPage> {
       iconSize: 24,
       padding: padding,
       icon: LineIcons.credit_card,
-      text: 'Purcahse',
+      text: 'Pay',
     ));
 
     tabs.add(GButton(
