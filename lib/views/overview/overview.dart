@@ -732,8 +732,8 @@ var deductions = Card(
                 children: <Widget>[
                   Text("Travel", style: TextStyle(fontSize: 25.0)),
                   Container(
-                    width: 180,
-                    height: 180,
+                    width: 170,
+                    height: 170,
                     child: DonutPieChart.withSampleData(),
                   ),
                   Text("\$4000"),
@@ -743,8 +743,8 @@ var deductions = Card(
                 children: <Widget>[
                   Text("Utilities", style: TextStyle(fontSize: 25.0)),
                   Container(
-                    width: 180,
-                    height: 180,
+                    width: 170,
+                    height: 170,
                     child: DonutPieChart.withSampleData2(),
                   ),
                   Text("\$4000"),
@@ -762,8 +762,8 @@ var deductions = Card(
                 children: <Widget>[
                   Text("Workspace", style: TextStyle(fontSize: 25.0)),
                   Container(
-                    width: 180,
-                    height: 180,
+                    width: 170,
+                    height: 170,
                     child: DonutPieChart.withSampleData(),
                   ),
                   Text("\$4000"),
@@ -773,8 +773,8 @@ var deductions = Card(
                 children: <Widget>[
                   Text("Subscriptions", style: TextStyle(fontSize: 25.0)),
                   Container(
-                    width: 180,
-                    height: 180,
+                    width: 170,
+                    height: 170,
                     child: DonutPieChart.withSampleData(),
                   ),
                   Text("\$4000"),
@@ -833,22 +833,22 @@ var business = Card(
                 children: <Widget>[
                   Text("Tax Owing", style: TextStyle(fontSize: 25.0)),
                   Container(
-                    width: 180,
-                    height: 180,
+                    width: 170,
+                    height: 170,
                     child: DonutPieChart.withSampleData(),
                   ),
-                  Text("\$4000"),
+                  Text("\$1244.30"),
                 ],
               ),
               Column(
                 children: <Widget>[
                   Text("GST Owing", style: TextStyle(fontSize: 25.0)),
                   Container(
-                    width: 180,
-                    height: 180,
+                    width: 170,
+                    height: 170,
                     child: DonutPieChart.withSampleData2(),
                   ),
-                  Text("\$4000"),
+                  Text("\$255.67"),
                 ],
               )
             ],
