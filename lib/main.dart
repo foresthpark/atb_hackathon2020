@@ -1,4 +1,7 @@
+import 'package:atb_hackathon/views/credit_card/confirm_payment.dart';
 import 'package:atb_hackathon/views/intro_screen.dart';
+import 'package:atb_hackathon/views/merchant/request_payment.dart';
+import 'package:atb_hackathon/views/pending_catgories.dart';
 import 'package:atb_hackathon/views/tab_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: TabPage(),
+      home: RequestPayment(),
     );
   }
 }

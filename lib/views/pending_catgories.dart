@@ -1,6 +1,7 @@
 import 'package:atb_hackathon/models/Transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:uuid/uuid.dart';
 
 class PendingCatgories extends StatefulWidget {
@@ -74,6 +75,15 @@ class _PendingCatgoriesState extends State<PendingCatgories> {
               onDismissed: (actionType) {
                 print("SLIDE ACTION:");
                 print(actionType);
+                if (actionType == SlideActionType.primary) {
+                  print("saved to business");
+                  txns.removeAt(index);
+                  print(txns.length);
+                } else {
+                  print("Saved to personal");
+                  txns.removeAt(index);
+                  print(txns.length);
+                }
               },
             ),
             key: UniqueKey(),
@@ -83,6 +93,62 @@ class _PendingCatgoriesState extends State<PendingCatgories> {
               color: Colors.white,
               child: Card(
                 child: ListTile(
+                  onLongPress: () {
+                    print("This is a fake transaction");
+                    Alert(
+                      context: context,
+                      image: Image.network("https://i.imgur.com/TbnoEKB.png"),
+                      type: AlertType.error,
+                      title: "FRAUDULANT TRANSACTION",
+                      desc: "Are you sure this is a fradulant transaction?",
+                      buttons: [
+                        DialogButton(
+                          child: Text(
+                            "NO",
+                            style:
+                                TextStyle(color: Colors.black26, fontSize: 20),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                          color: Colors.white,
+                        ),
+                        DialogButton(
+                          child: Text(
+                            "YES",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Alert(
+                              context: context,
+                              type: AlertType.error,
+                              title: "SUCCESS",
+                              desc:
+                                  "This transaction was successfully reported",
+                              buttons: [
+                                DialogButton(
+                                  child: Text(
+                                    "COOL",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                  ),
+                                  onPressed: () => Navigator.pop(context),
+                                  width: 120,
+                                )
+                              ],
+                            ).show();
+                          },
+                          color: Colors.red,
+//                          gradient: LinearGradient(colors: [
+//                            Color.fromRGBO(116, 116, 191, 1.0),
+//                            Color.fromRGBO(52, 138, 199, 1.0)
+//                          ]),
+                        )
+                      ],
+                    ).show();
+                  },
                   leading: CircleAvatar(
                     backgroundColor: Colors.indigoAccent,
                     child: Text(index.toString()),

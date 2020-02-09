@@ -1,4 +1,5 @@
 import 'package:atb_hackathon/views/pending_catgories.dart';
+import 'package:atb_hackathon/views/tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -132,7 +133,7 @@ class IntroScreen extends StatelessWidget {
           print('This is onDone');
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => PendingCatgories()),
+            MaterialPageRoute(builder: (context) => TabPage()),
           );
         },
         onSkip: () {
