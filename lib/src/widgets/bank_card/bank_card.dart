@@ -70,12 +70,16 @@ class _BankCardState extends State<BankCardWidget>
             child: Align(
                 alignment: Alignment.center,
                 child: Container(
-                    height: 250,
-                    width: MediaQuery.of(context).size.width - 20,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: widget.asset,
-                    )))));
+                  decoration: new BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [Color(0xFF71C5E8), Color(0xFF009CDE)]),
+                      borderRadius:
+                          new BorderRadius.all(Radius.circular(10.0))),
+                  height: 250,
+                  width: MediaQuery.of(context).size.width - 20,
+                ))));
   }
 
   Widget _buildCardFlag() {

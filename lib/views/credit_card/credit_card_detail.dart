@@ -12,9 +12,9 @@ class CreditCardDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(0, 0, 0, 0),
+        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(0, 0, 0, 0),
+          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
           elevation: 0,
           title: Text('Credit Card'),
         ),
