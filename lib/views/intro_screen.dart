@@ -6,15 +6,15 @@ import 'package:introduction_screen/introduction_screen.dart';
 class IntroScreen extends StatelessWidget {
   var listPagesViewModel = [
     PageViewModel(
-      title: "How big is your house?",
+      title: "What is your anticipated income for this year?",
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           TextFormField(
             decoration: InputDecoration(
-              labelText: "Square ft",
+              labelText: "Dollars \$",
               labelStyle: TextStyle(color: Colors.black),
-              hintText: "Entehr the square footage of your office",
+              hintText: "Enter your anticipated income",
               hintStyle: TextStyle(color: Colors.black12),
             ),
           ),
@@ -29,15 +29,15 @@ class IntroScreen extends StatelessWidget {
       ),
     ),
     PageViewModel(
-      title: "What is the size of your office?",
+      title: "What is the projected revenue of your side hustle?",
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           TextFormField(
             decoration: InputDecoration(
-              labelText: "Square ft",
+              labelText: "Dollars \$",
               labelStyle: TextStyle(color: Colors.black),
-              hintText: "Entehr the square footage of your office",
+              hintText: "Enter projected side husetle revenue",
               hintStyle: TextStyle(color: Colors.black),
             ),
           ),
@@ -52,7 +52,7 @@ class IntroScreen extends StatelessWidget {
       ),
     ),
     PageViewModel(
-      title: "How much is your utility bill?",
+      title: "What is the square footage of your residence?",
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -60,7 +60,7 @@ class IntroScreen extends StatelessWidget {
             decoration: InputDecoration(
               labelText: "Square ft",
               labelStyle: TextStyle(color: Colors.black),
-              hintText: "Entehr the square footage of your office",
+              hintText: "Enter the square footage of your residence",
               hintStyle: TextStyle(color: Colors.black),
             ),
           ),
@@ -75,7 +75,7 @@ class IntroScreen extends StatelessWidget {
       ),
     ),
     PageViewModel(
-      title: "How much is your Internet bell?",
+      title: "What is the square footage of you side hustle office space used?",
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -83,7 +83,7 @@ class IntroScreen extends StatelessWidget {
             decoration: InputDecoration(
               labelText: "Square ft",
               labelStyle: TextStyle(color: Colors.black),
-              hintText: "Entehr the square footage of your office",
+              hintText: "Enter the square footage of your office",
               hintStyle: TextStyle(color: Colors.black),
             ),
           ),
@@ -98,18 +98,17 @@ class IntroScreen extends StatelessWidget {
       ),
     ),
     PageViewModel(
-      title: "How much is your phone bill?",
+      title: "Thank you!",
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: "Square ft",
-              labelStyle: TextStyle(color: Colors.black),
-              hintText: "Entehr the square footage of your office",
-              hintStyle: TextStyle(color: Colors.black),
+          Text(
+            "Let's go save some money!",
+            style: TextStyle(
+              fontSize: 20,
+              fontStyle: FontStyle.italic,
             ),
-          ),
+          )
         ],
       ),
       image: Padding(

@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:atb_hackathon/models/MerchantItem.dart';
+import 'package:atb_hackathon/models/QRData.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -69,7 +72,13 @@ class ProductDetailPage extends StatelessWidget {
             child: QrImage(
 //              embeddedImage: NetworkImage(
 //                  "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fn7.alamy.com%2Fzooms%2Fb1ce2246a8b541ba977b986fd627353e%2Frobot-face-icon-smiling-face-showing-tongue-emotion-robotic-emoji-jhtrd2.jpg&f=1&nofb=1"),
-              data: item.price.toString(),
+              data: json
+                  .encode(QRData(
+                      vendor: "Hacky Goods",
+                      image: item.image_url,
+                      name: item.name,
+                      price: item.price.toString()))
+                  .toString(),
               version: QrVersions.auto,
               size: 180.0,
             ),

@@ -4,12 +4,13 @@ import 'package:slide_to_confirm/slide_to_confirm.dart';
 class ConfirmPaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final String price = ModalRoute.of(context).settings.arguments;
+    final Map<dynamic, dynamic> infoJson =
+        ModalRoute.of(context).settings.arguments;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-        backgroundColor: Color(0xff005EB8),
+        backgroundColor: Colors.white,
         appBar: AppBar(
             backgroundColor: Color.fromRGBO(0, 0, 0, 0),
             elevation: 0,
@@ -35,7 +36,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                           BoxShadow(
                             offset: Offset(0.0, 3.0),
                             blurRadius: 6.0,
-                            color: Colors.black38,
+                            color: Colors.white,
                           ),
                         ],
                         borderRadius: BorderRadius.all(
@@ -47,39 +48,62 @@ class ConfirmPaymentScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Container(
+                              width: 150,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0.0, 3.0),
+                                    blurRadius: 6.0,
+                                    color: Colors.black38,
+                                  ),
+                                ],
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                              ),
+                              child: Image.asset(
+                                'assets/items/${infoJson['image']}',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
                           Expanded(
                             child: Text(
-                              'Sending',
+                              'Paying: ${infoJson['vendor']}',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 20,
                               ),
                             ),
                           ),
                           Expanded(
                             child: Text(
-                              '\$' + price,
+                              '\$' + infoJson['price'],
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontSize: 40,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
                           Expanded(
                             child: Text(
-                              'To:',
+                              'for:',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 20,
                               ),
                             ),
                           ),
                           Expanded(
                             child: Text(
-                              'Joe Dang',
+                              infoJson['name'],
                               style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 50,
+                                  color: Colors.white,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
@@ -95,7 +119,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                 child: Container(
                   child: ConfirmationSlider(
                     onConfirmation: () {
-//                  Navigator.pop(context);
+                      Navigator.pop(context);
                       print('Confirmed');
                     },
                   ),

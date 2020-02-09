@@ -1,7 +1,9 @@
+import 'package:atb_hackathon/models/QRData.dart';
 import 'package:atb_hackathon/src/widgets/bank_card/bank_card_slider.dart';
 import 'package:atb_hackathon/views/credit_card/confirm_payment.dart';
 import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
+import 'dart:convert';
 
 class CreditCardScreen extends StatefulWidget {
   @override
@@ -12,16 +14,25 @@ class _CreditCardScreenState extends State<CreditCardScreen> {
   bool categoryValue = true;
 
   _scan() async {
-    String cameraScanResult = await scanner.scan();
     print("###############################");
+    String cameraScanResult = await scanner.scan();
     print(cameraScanResult);
+//    var infoJson = json.encode(cameraScanResult);
+    var decoded = json.decode(cameraScanResult);
+    print(decoded);
+
+//    var map = Map.fromIterable(decoded,
+//        key: (e) => e.keys.first, value: (e) => e.values.first);
+//    var paymentInfo = QRData.fromJson(infoJson);
+//    print(map);
+//    print(paymentInfo.name);
+    print('hello');
     Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ConfirmPaymentScreen(),
-        settings: RouteSettings(arguments: cameraScanResult),
-      ),
-    );
+        context,
+        MaterialPageRoute(
+          builder: (context) => ConfirmPaymentScreen(),
+          settings: RouteSettings(arguments: decoded),
+        ));
   }
 
   void toggleCategoryButton() {
