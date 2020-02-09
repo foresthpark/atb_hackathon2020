@@ -17,7 +17,10 @@ class _CreditCardScreenState extends State<CreditCardScreen> {
     print(cameraScanResult);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ConfirmPaymentScreen()),
+      MaterialPageRoute(
+        builder: (context) => ConfirmPaymentScreen(),
+        settings: RouteSettings(arguments: cameraScanResult),
+      ),
     );
   }
 

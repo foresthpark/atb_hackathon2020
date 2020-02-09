@@ -4,6 +4,7 @@ import 'package:slide_to_confirm/slide_to_confirm.dart';
 class ConfirmPaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final String price = ModalRoute.of(context).settings.arguments;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
@@ -57,7 +58,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              '\$65.00',
+                              '\$' + price,
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 40,
