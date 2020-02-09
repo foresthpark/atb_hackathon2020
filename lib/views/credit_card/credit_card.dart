@@ -65,20 +65,20 @@ class _CreditCardScreenState extends State<CreditCardScreen> {
               activeTrackColor: Colors.lightGreenAccent,
               activeColor: Colors.green,
               secondary: categoryValue
-                  ? Icon(Icons.work, color: Colors.white)
-                  : Icon(Icons.camera, color: Colors.white),
+                  ? Icon(Icons.work, color: Colors.black)
+                  : Icon(Icons.account_circle, color: Colors.black),
               title: categoryValue
                   ? Text(
                       'Business',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
                     )
                   : Text(
                       'Personal',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
                     ),
