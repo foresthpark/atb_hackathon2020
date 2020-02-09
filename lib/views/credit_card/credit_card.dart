@@ -46,58 +46,57 @@ class _CreditCardScreenState extends State<CreditCardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-        appBar: AppBar(
-            backgroundColor: Color.fromRGBO(0, 0, 0, 0),
-            elevation: 0,
-            title: new Center(
-                child: new Text('Pay', textAlign: TextAlign.center))),
-        body: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-          return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            SwitchListTile(
-              value: categoryValue,
-              onChanged: (value) {
-                print(value);
-                setState(() {
-                  toggleCategoryButton();
-                });
-              },
-              activeTrackColor: Colors.lightGreenAccent,
-              activeColor: Colors.green,
-              secondary: categoryValue
-                  ? Icon(Icons.work, color: Colors.black)
-                  : Icon(Icons.account_circle, color: Colors.black),
-              title: categoryValue
-                  ? Text(
-                      'Business',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30),
-                    )
-                  : Text(
-                      'Personal',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30),
+        body: SafeArea(
+          child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+            return Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SwitchListTile(
+                    value: categoryValue,
+                    onChanged: (value) {
+                      print(value);
+                      setState(() {
+                        toggleCategoryButton();
+                      });
+                    },
+                    activeTrackColor: Colors.lightGreenAccent,
+                    activeColor: Colors.green,
+                    secondary: categoryValue
+                        ? Icon(Icons.work, color: Colors.black)
+                        : Icon(Icons.camera, color: Colors.black),
+                    title: categoryValue
+                        ? Text(
+                            'Business',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30),
+                          )
+                        : Text(
+                            'Personal',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30),
+                          ),
+                  ),
+                  Container(
+                      height: constraints.biggest.height * 0.75,
+                      child: BankCardSliderWidget()),
+                  Ink(
+                    decoration: const ShapeDecoration(
+                      color: Colors.lightBlue,
+                      shape: CircleBorder(),
                     ),
-            ),
-            Container(
-                height: constraints.biggest.height * 0.75,
-                child: BankCardSliderWidget()),
-            Ink(
-              decoration: const ShapeDecoration(
-                color: Colors.lightBlue,
-                shape: CircleBorder(),
-              ),
-              child: IconButton(
-                icon: Icon(Icons.camera_alt),
-                color: Colors.white,
-                onPressed: _scan,
-              ),
-            ),
-          ]);
-        }));
+                    child: IconButton(
+                      icon: Icon(Icons.camera_alt),
+                      color: Colors.white,
+                      onPressed: _scan,
+                    ),
+                  ),
+                ]);
+          }),
+        ));
   }
 }

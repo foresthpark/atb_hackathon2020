@@ -12,9 +12,14 @@ class ConfirmPaymentScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-            backgroundColor: Color.fromRGBO(0, 0, 0, 0),
-            elevation: 0,
-            title: const Text('Confirm payment')),
+          title: Text(infoJson['name']),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back),
+          ),
+        ),
         body: Container(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

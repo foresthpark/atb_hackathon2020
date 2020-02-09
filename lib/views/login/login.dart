@@ -34,8 +34,8 @@ class _LoginState extends State<LoginPage> {
                                     style: TextStyle(fontSize: 30.0)),
                               ),
                               Container(
-                                  padding: EdgeInsets.only(
-                                      left: 20.0, right: 20.0),
+                                  padding:
+                                      EdgeInsets.only(left: 20.0, right: 20.0),
                                   child: Image(
                                       image: AssetImage(
                                           "lib/src/assets/imgs/app_logo.png"),
@@ -64,9 +64,7 @@ class _LoginState extends State<LoginPage> {
                                     disabledTextColor: Colors.black,
                                     padding: EdgeInsets.all(20.0),
                                     splashColor: Colors.blueAccent,
-                                    onPressed: () {
-
-                                    },
+                                    onPressed: () {},
                                     child: Text(
                                       "Login",
                                       style: TextStyle(fontSize: 20.0),
@@ -98,8 +96,8 @@ class _LoginState extends State<LoginPage> {
                                   children: <Widget>[
                                     Expanded(
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment
-                                            .start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
                                             "BEEP, BOP, BOOP...",
@@ -127,8 +125,7 @@ class _LoginState extends State<LoginPage> {
                                     Column(
                                       children: <Widget>[
                                         CircleAvatar(
-                                            backgroundImage:
-                                            AssetImage(
+                                            backgroundImage: AssetImage(
                                                 "lib/src/assets/imgs/riker.jpg"),
                                             radius: 45.0)
                                       ],
@@ -150,13 +147,13 @@ class _LoginState extends State<LoginPage> {
                                       width: double.infinity,
                                       child: GestureDetector(
                                         onTap: () {
-                                          Navigator.pop(context);
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => IntroScreen(),
-                                            ),
-                                          );
+//                                          Navigator.pop(context);
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) {
+                                              return IntroScreen();
+                                            },
+                                          ));
                                         },
                                         child: Container(
                                           margin: EdgeInsets.only(top: 20.0),
@@ -174,8 +171,7 @@ class _LoginState extends State<LoginPage> {
                                               textAlign: TextAlign.center,
                                               style: TextStyle(fontSize: 30.0)),
                                         ),
-                                      )
-                                  ),
+                                      )),
                                   Container(
                                     padding: EdgeInsets.only(top: 10.0),
                                     alignment: Alignment.centerLeft,
@@ -189,12 +185,8 @@ class _LoginState extends State<LoginPage> {
                               ),
                             )
                           ],
-                        )
-                    )
+                        ))
                   ],
-                )
-            )
-        )
-    );
+                ))));
   }
 }
