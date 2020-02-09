@@ -72,8 +72,8 @@ class _TabPageState extends State<TabPage> {
       color: Colors.pink.withOpacity(.2),
       iconSize: 24,
       padding: padding,
-      icon: LineIcons.heart_o,
-      text: 'Likes',
+      icon: LineIcons.credit_card,
+      text: 'Purcahse',
     ));
 
     tabs.add(GButton(
