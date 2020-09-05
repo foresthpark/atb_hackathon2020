@@ -106,7 +106,7 @@ class _LoginState extends State<LoginPage> {
                                           Padding(
                                             padding: EdgeInsets.only(top: 10.0),
                                             child: Text(
-                                              "Ryker Rumsey",
+                                              "Forest Park",
                                               style: TextStyle(fontSize: 40.0),
                                             ),
                                           ),
