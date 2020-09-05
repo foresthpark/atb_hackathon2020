@@ -306,7 +306,7 @@ class _PendingCatgoriesState extends State<PendingCatgories> {
                 leading: categoryToIcon(categories[index]),
                 title:
                     categoryToAmount(amounts[index], categories[index], index),
-                subtitle: Text('${names[index].toString()}${dates[index]}'),
+                subtitle: Text('${names[index].toString()} [${dates[index]}]'),
                 trailing:
                     categories[index] == "milage" ? Icon(Icons.map) : null,
                 onTap: () {},
